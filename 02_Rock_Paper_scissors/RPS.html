@@ -1,0 +1,80 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Rock Paper Scissors</title>  
+</head>  
+<body>  
+    <h1>Rock Paper Scissors</h1>  
+    <div>  
+        <button onclick="rpsFunction('rock')">Rock</button>  
+        <button onclick="rpsFunction('paper')">Paper</button>  
+        <button onclick="rpsFunction('scissors')">Scissors</button>  
+        <button onclick="resultFunction()">result</button>
+
+        <button onclick="console.log(Math.random())">Random</button>
+    </div>  
+    <div id="result"></div>  
+
+    <script>  
+        const game = {
+            rock: 0,
+            paper: 0,
+            scissors: 0
+        }
+
+        function resultFunction()
+        {
+            alert(`result: rock = ${game.rock}, paper = ${game.paper}, scissors = ${game.scissors}`);
+        }
+
+        function rpsFunction(userChoice)
+        {
+            let number = Math.random();
+            let ComputerChoice;
+
+            if(number < (1/3)){
+                ComputerChoice = 'rock';
+            }
+            else if(number < (2/3)){
+                ComputerChoice = 'Paper';
+            }
+            else{
+                ComputerChoice = 'scissors';
+            }
+
+            if(userChoice === 'rock'){
+                game.rock = game.rock + 1;
+            }
+            if(userChoice === 'paper'){
+                game.paper = game.paper + 1;
+            }
+            if(userChoice === 'scissors'){
+                game.scissors = game.scissors + 1;
+            }
+
+            const result = determineResult(userChoice, ComputerChoice);
+            //document.getElementById("result").innerHTML = `You Chose: ${userChoice}. computer chose: ${ComputerChoice}. result: ${result}`;
+            alert(`You Chose: ${userChoice}. computer chose: ${ComputerChoice}. result: ${result}`);
+        }
+
+        function determineResult(userChoice, ComputerChoice){
+            if(userChoice === ComputerChoice){
+                return "equal";
+            }
+            else if(
+                (userChoice === 'rock' && ComputerChoice === 'scissors') ||
+                (userChoice === 'paper' && ComputerChoice === 'rock') ||
+                (userChoice === 'scissors' && ComputerChoice === 'paper')
+            )
+            {
+                return "you win";
+            }
+            else{
+                return "you lost";
+            }
+        }
+    </script>  
+</body>  
+</html>  
