@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Button Example</title>  
+</head>  
 
-    </head>
+<body>  
+    <button>9a</button>  
+    <button id="button-9b" onclick="fun()">9b</button>  
+</body>  
 
-    <body>
-        <button>9a</button>
-        <button id="button-9b" onclick="fun()">9b</button>
-    </body>
-
-    <script>
-        function fun(){
-            const textButton = document.getElementById('button-9b');
-            console.log(textButton);
-            if(textButton.textContent === `9b`){
-                document.textContent = `9b done`;
-            }
+<script>  
+    function fun() {  
+        const textButton = document.getElementById('button-9b'); // Get the correct button  
+        console.log(textButton);  
+        if (textButton.textContent === '9b') {  
+            textButton.textContent = '9b done'; // Change textContent correctly  
         }
-    </script>
-</html>
+        else{
+            textButton.textContent = '9b';
+        }
+    }  
+</script>  
+</html>  
