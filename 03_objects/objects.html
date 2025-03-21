@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+
+    <script>
+        function Book(title, year, writer){
+            this.title = title;
+            this.year = year;
+            this.writer = writer;
+            this.properties = function(){
+                console.log(`your book is: ${this.title} in year: ${this.year} and writer is: ${this.writer}`);
+            }
+        }
+
+        const introBook = new Book('Harry Potter', 1991, 'JK.Rowling');
+        introBook.properties();
+
+        //localStorage.setItem(Book.title, `MacDonald`);
+        console.log(localStorage.getItem(Book.title));
+    </script>
+</html>
