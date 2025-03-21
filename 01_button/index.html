@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Add to Cart Example</title>  
+</head>  
+<body>  
+    <form onsubmit="return false;"> <!-- Prevents form submission -->  
+        <label for="textbox">Enter text: ...</label>  
+        <input type="text" id="text" name="text" placeholder="type here ...">  
+
+        <div>  
+            <button type="button" onclick="addToCart()">Add to cart</button>  
+        </div>  
+    </form>  
+    <div id="output"></div>  
+
+    <script>  
+        let quantity = 0;  
+
+        function addToCart() {            
+            // Create the message  
+            let message = 'Add to cart ... ' + quantity++;  
+            
+            // Update the value of the input field with the message  
+            document.getElementById('text').value = message;  
+        }  
+    </script>  
+</body>  
+</html>  
