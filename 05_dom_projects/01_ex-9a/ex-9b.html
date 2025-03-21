@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <button>9a</button>
+        <button id="button-9b" onclick="fun()">9b</button>
+    </body>
+
+    <script>
+        function fun(){
+            const textButton = document.getElementById('button-9b');
+            console.log(textButton);
+            if(textButton.textContent === `9b`){
+                document.textContent = `9b done`;
+            }
+        }
+    </script>
+</html>
