@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example 9C</title>
+    </head>
+
+    <body>
+        <input id="input-name"></input>
+        <button id="button-submit" onclick="submitFunction()">Submit</button>
+        <br>
+        <p id="para"></p>
+    </body>
+
+    <script>
+        function submitFunction(){
+            const paragraph = document.getElementById('para');
+            const textName  = document.getElementById('input-name');
+
+            paragraph.textContent = 'Your name is: ' + textName.textContent;
+        }
+    </script>
+</html>
