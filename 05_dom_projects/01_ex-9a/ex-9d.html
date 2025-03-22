@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <input id="input-name"></input>
+        <input id="input-name" placeholder="write your name ..."></input>
         <button id="button-submit" onclick="submitFunction()">Submit</button>
         <br>
         <p id="para"></p>
@@ -16,7 +16,7 @@
             const paragraph = document.getElementById('para');
             const textName  = document.getElementById('input-name');
 
-            paragraph.textContent = 'Your name is: ' + textName.textContent;
+            paragraph.textContent = 'Your name is: ' + textName.value;
         }
     </script>
 </html>
