@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example 9C</title>
+    </head>
+
+    <body>
+        <button id="button-head" onclick="paraFunction('head')">head</button>
+        <button id="button-tail" onclick="paraFunction('tail')">tail</button>
+        <br>
+        <p id="para"></p>
+    </body>
+
+    <script>
+        function paraFunction(buttonState){
+            const paragraph = document.getElementById('para');
+
+            if(buttonState === 'head'){
+                paragraph.textContent = 'You Choose: head';
+            }
+            else if(buttonState === 'tail'){
+                paragraph.textContent = 'You choose: tail';
+            }
+        }
+    </script>
+</html>
