@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .subButton{
+                border: none;
+                background-color: black;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>YouTube Subscribe Button</div>
+        <br>
+        <div id="sub-button"><button onclick="subsFunction()" class="subButton">Subsribe</button></div>
+
+        <br><br><br><br>
+
+        <div>Rock Paper Scissors</div>
+        <br>
+        <a href="">Click here</a>
+
+        <br><br><br>
+
+        <div>Amazon Shipping Calculator</div>
+        <br>
+        <div>Orders under $40 = +$10 shipping</div>
+        <br>
+        <div>Orders over  $40 = FREE shipping</div>
+
+        <br>
+        <input type="text" id="text"><button onclick="calculateFunction()">Calculate</button>
+        <div id="measure-calculate"></div>
+    </body>
+
+    <script>
+        function subsFunction()
+        {
+            const button = document.getElementById('sub-button');
+
+            if(button.textContent === 'Subscribe'){
+                button.querySelector('button').textContent = 'Subscribed';
+            }
+            else{
+                button.querySelector('button').textContent = 'Subscribe';
+            }
+        }
+
+        function calculateFunction(){
+            const measureCalculateDiv = document.getElementById('measure-calculate');
+            const orderNumber = parseFloat(document.getElementById('text').value);
+            if(orderNumber >= 40){
+                measureCalculateDiv.textContent = "FREE shipping";
+            }
+            else{
+                measureCalculateDiv.textContent = orderNumber + 10 + "$ shipping";
+            }
+        }
+    </script>
+</html>
