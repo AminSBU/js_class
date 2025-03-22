@@ -12,13 +12,18 @@
                 padding-right: 10px;
                 border-radius: 10px;
             }
+
+            .is-subscribed{
+                background-color: grey;
+                color: white;
+            }
         </style>
     </head>
 
     <body>
         <div>YouTube Subscribe Button</div>
         <br>
-        <div id="sub-button"><button onclick="subsFunction()" class="subButton">Subsribe</button></div>
+        <div id="sub-button"><button onclick="subsFunction()" class="subButton">Subscribe</button></div>
 
         <br><br><br><br>
 
@@ -40,17 +45,17 @@
     </body>
 
     <script>
-        function subsFunction()
-        {
-            const button = document.getElementById('sub-button');
-
-            if(button.textContent === 'Subscribe'){
-                button.querySelector('button').textContent = 'Subscribed';
-            }
-            else{
-                button.querySelector('button').textContent = 'Subscribe';
-            }
-        }
+        function subsFunction() {  
+            const button = document.querySelector("#sub-button button"); // Select the button directly  
+            // Check if the current text is "Subscribe"  
+            if (button.textContent === 'Subscribe') {  
+                button.textContent = 'Subscribed';  
+                button.classList.add('is-subscribed'); // Add the class for styling  
+            } else {  
+                button.textContent = 'Subscribe';  
+                button.classList.remove('is-subscribed'); // Remove class when toggled back  
+            }  
+        } 
 
         function calculateFunction(){
             const measureCalculateDiv = document.getElementById('measure-calculate');
