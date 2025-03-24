@@ -17,6 +17,19 @@
                 background-color: grey;
                 color: white;
             }
+
+            .inputText{
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            .calculateButton{
+                border: none;
+                background-color: green;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+            }
         </style>
     </head>
 
@@ -40,12 +53,12 @@
         <div>Orders over  $40 = FREE shipping</div>
 
         <br>
-        <input type="text" id="text"><button onclick="calculateFunction()">Calculate</button>
+        <input type="text" id="text" class="inputText"><button onclick="calculateFunction()" class="calculateButton">Calculate</button>
         <div id="measure-calculate"></div>
     </body>
 
     <script>
-        function subsFunction() {  
+        function subsFunction() {
             const button = document.querySelector("#sub-button button"); // Select the button directly  
             // Check if the current text is "Subscribe"  
             if (button.textContent === 'Subscribe') {  
