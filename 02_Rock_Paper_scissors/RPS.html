@@ -43,7 +43,9 @@
         <button onclick="rpsFunction('paper')" class="rps-icons"><img src="images/paper-emoji.png" class="rps-image"></button>  
         <button onclick="rpsFunction('scissors')" class="rps-icons"><img src="images/scissors-emoji.png" class="rps-image"></button>  
     </div> 
-    <div id="result"></div>  
+    
+    <div id="result"
+    ></div>
 
     <script>  
         const game = {
@@ -54,7 +56,8 @@
 
         function resultFunction()
         {
-            alert(`result: rock = ${game.rock}, paper = ${game.paper}, scissors = ${game.scissors}`);
+            //alert(`result: rock = ${game.rock}, paper = ${game.paper}, scissors = ${game.scissors}`);
+            document.getElementById('result').textContent = `result: rock = ${game.rock}, paper = ${game.paper}, scissors = ${game.scissors}`;
         }
 
         function rpsFunction(userChoice)
@@ -84,7 +87,8 @@
 
             const result = determineResult(userChoice, ComputerChoice);
             //document.getElementById("result").innerHTML = `You Chose: ${userChoice}. computer chose: ${ComputerChoice}. result: ${result}`;
-            alert(`You Chose: ${userChoice}. computer chose: ${ComputerChoice}. result: ${result}`);
+            //alert(`You Chose: ${userChoice}. computer chose: ${ComputerChoice}. result: ${result}`);
+            document.getElementById('result').textContent = `result: rock = ${game.rock}, paper = ${game.paper}, scissors = ${game.scissors}, result = ${result}`;
         }
 
         function determineResult(userChoice, ComputerChoice){
