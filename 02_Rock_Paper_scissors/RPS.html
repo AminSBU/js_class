@@ -3,18 +3,46 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Rock Paper Scissors</title>  
-</head>  
-<body>  
-    <h1>Rock Paper Scissors</h1>  
-    <div>  
-        <button onclick="rpsFunction('rock')"><img src="rock-emoji.png"></button>  
-        <button onclick="rpsFunction('paper')">Paper</button>  
-        <button onclick="rpsFunction('scissors')">Scissors</button>  
-        <button onclick="resultFunction()">result</button>
+    <title>Rock Paper Scissors</title>
 
-        <button onclick="console.log(Math.random())">Random</button>
-    </div>  
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button-container {  
+            display: flex; /* Enables flexbox */  
+            justify-content: center; /* Centers the buttons horizontally */  
+            align-items: center; /* Aligns buttons vertically (if needed) */  
+            margin-bottom: 20px; /* Adds space between icons and buttons */  
+        }  
+
+        .rps-icons {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100px;  
+            width: 100px;  
+            border-radius: 50%;  
+            background-color: transparent;  
+            margin-right: 10px; /* Adds spacing between icons */  
+            border: 1px solid #ccc; /* Optional: to visualize the circle */  
+        }  
+
+        .rps-image {  
+            height: 80px; /* Adjusted height */  
+            width: 80px; /* Adjusted width */  
+            border-radius: 50%;  
+        }   
+    </style>
+</head>     
+<body>
+    <div class="button-container">  
+        <button onclick="rpsFunction('rock')" class="rps-icons"><img src="images/rock-emoji.png" class="rps-image"></button>  
+        <button onclick="rpsFunction('paper')" class="rps-icons"><img src="images/paper-emoji.png" class="rps-image"></button>  
+        <button onclick="rpsFunction('scissors')" class="rps-icons"><img src="images/scissors-emoji.png" class="rps-image"></button>  
+    </div> 
     <div id="result"></div>  
 
     <script>  
