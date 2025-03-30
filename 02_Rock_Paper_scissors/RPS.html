@@ -46,7 +46,10 @@
         <button onclick="rpsFunction('scissors')" class="rps-icons"><img src="images/scissors-emoji.png" class="rps-image"></button>  
     </div>
 
-    <div id="user-choose"></div>
+    <div id="user-choose">  
+        <img id="user-image" src="" alt="User Choice" style="display: none;"/>  
+        <img id="computer-image" src="" alt="Computer Choice" style="display: none;"/>  
+    </div>
     
     <div id="result"></div>
 
@@ -63,38 +66,48 @@
             document.getElementById('result').textContent = `result: rock = ${game.rock}, paper = ${game.paper}, scissors = ${game.scissors}`;
         }
 
-        function rpsFunction(userChoice)
-        {
-            let number = Math.random();
-            let ComputerChoice;
+        function rpsFunction(userChoice) {  
+            let number = Math.random();  
+            let ComputerChoice;  
 
-            if(number < (1/3)){
-                ComputerChoice = 'rock';
-            }
-            else if(number < (2/3)){
-                ComputerChoice = 'Paper';
-            }
-            else{
-                ComputerChoice = 'scissors';
-            }
+            if (number < (1 / 3)) {  
+                ComputerChoice = 'rock';  
+            } else if (number < (2 / 3)) {  
+                ComputerChoice = 'paper'; // Ensure consistent casing  
+            } else {  
+                ComputerChoice = 'scissors';  
+            }  
 
-            if(userChoice === 'rock'){
-                game.rock = game.rock + 1;
-            }
-            if(userChoice === 'paper'){
-                game.paper = game.paper + 1;
-            }
-            if(userChoice === 'scissors'){
-                game.scissors = game.scissors + 1;
-            }
+            // Update game counts  
+            if (userChoice === 'rock') {  
+                game.rock += 1;  
+            }  
+            if (userChoice === 'paper') {  
+                game.paper += 1;  
+            }  
+            if (userChoice === 'scissors') {  
+                game.scissors += 1;  
+            }  
 
-            document.getElementById('user-choose').textContent = `you choose: ${userChoice}. Computer choose: ${ComputerChoice}`;
+            // Get image elements  
+            const userImage = document.getElementById('user-image');  
+            const computerImage = document.getElementById('computer-image');  
 
-            const result = determineResult(userChoice, ComputerChoice);
-            //document.getElementById("result").innerHTML = `You Chose: ${userChoice}. computer chose: ${ComputerChoice}. result: ${result}`;
-            //alert(`You Chose: ${userChoice}. computer chose: ${ComputerChoice}. result: ${result}`);
-            document.getElementById('result').textContent = `result: rock = ${game.rock}, paper = ${game.paper}, scissors = ${game.scissors}, result = ${result}`;
-        }
+            // Set the image source based on the user's choice  
+            userImage.src = `images/${userChoice}-emoji.png`;  
+            userImage.style.display = 'inline'; // Show the user's image  
+
+            // Set the image source based on the computer's choice  
+            computerImage.src = `images/${ComputerChoice}-emoji.png`; // Consistent casing here  
+            computerImage.style.display = 'inline'; // Show the computer's image  
+
+            // Clear any previous text content  
+            document.getElementById('user-choose').textContent = ''; // Clear text content  
+
+            const result = determineResult(userChoice, ComputerChoice);  
+            // Display result  
+            document.getElementById('result').textContent = `result: rock = ${game.rock}, paper = ${game.paper}, scissors = ${game.scissors}, result = ${result}`;  
+        }  
 
         function determineResult(userChoice, ComputerChoice){
             if(userChoice === ComputerChoice){
