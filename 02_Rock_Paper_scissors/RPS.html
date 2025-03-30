@@ -36,7 +36,19 @@
         }  
         #user-choose {  
             margin-bottom: 10px; /* Adds space below */  
-        }  
+        }
+
+        .user-image{
+            height: 50px;
+            width: 50px;
+            border-radius: 10%;
+        }
+
+        .computer-image{
+            height: 50px;
+            width: 50px;
+            border-radius: 10%;
+        }
     </style>
 </head>     
 <body>
@@ -47,8 +59,8 @@
     </div>
 
     <div id="user-choose">  
-        <img id="user-image" src="" alt="User Choice" style="display: none;"/>  
-        <img id="computer-image" src="" alt="Computer Choice" style="display: none;"/>  
+        <img id="user-image" class="user-image" alt="User Choice" style="display: none;"/>  
+        <img id="computer-image" class="computer-image" alt="Computer Choice" style="display: none;"/>  
     </div>
     
     <div id="result"></div>
@@ -67,51 +79,32 @@
         }
 
         function rpsFunction(userChoice) {  
-            let number = Math.random();  
-            let ComputerChoice;  
+            console.log("rpsFunction called");  
 
-            if (number < (1 / 3)) {  
-                ComputerChoice = 'rock';  
-            } else if (number < (2 / 3)) {  
-                ComputerChoice = 'paper'; // Ensure consistent casing  
-            } else {  
-                ComputerChoice = 'scissors';  
-            }  
-
-            // Update game counts  
-            if (userChoice === 'rock') {  
-                game.rock += 1;  
-            }  
-            if (userChoice === 'paper') {  
-                game.paper += 1;  
-            }  
-            if (userChoice === 'scissors') {  
-                game.scissors += 1;  
-            }  
-
-            // Get image elements  
-            const userImage = document.getElementById('user-image');  
-            const computerImage = document.getElementById('computer-image'); 
+            // Generate a random computer choice  
+            const choices = ['rock', 'paper', 'scissors'];  
+            const computerChoice = choices[Math.floor(Math.random() * 3)];  
             
-            console.log(userImage);
-            console.log(computerImage);
+            console.log(`User choice: ${userChoice}`);  
+            console.log(`Computer choice: ${computerChoice}`);  
+            
+            // Update game counts  
+            game[userChoice] += 1;  
 
-            // Set the image source based on the user's choice  
+            // Update the images for user and computer  
+            const userImage = document.getElementById('user-image');  
+            const computerImage = document.getElementById('computer-image');   
+
             userImage.src = `images/${userChoice}-emoji.png`;  
-            userImage.style.display = 'inline'; // Show the user's image  
+            userImage.style.display = 'inline';   
 
-            // Set the image source based on the computer's choice  
-            computerImage.src = `images/${ComputerChoice}-emoji.png`; // Consistent casing here  
-            computerImage.style.display = 'inline'; // Show the computer's image 
-            console.log(userImage.src); 
-            console.log(computerImage.src);
-            // Clear any previous text content  
-            document.getElementById('user-choose').innerHTML = `<img src="images/${userChoice}-emoji.png">`;     // Clear text content  
+            computerImage.src = `images/${computerChoice}-emoji.png`;  
+            computerImage.style.display = 'inline';   
 
-            const result = determineResult(userChoice, ComputerChoice);  
             // Display result  
+            const result = determineResult(userChoice, computerChoice);  
             document.getElementById('result').textContent = `result: rock = ${game.rock}, paper = ${game.paper}, scissors = ${game.scissors}, result = ${result}`;  
-        }  
+        }    
 
         function determineResult(userChoice, ComputerChoice){
             if(userChoice === ComputerChoice){
