@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Rock Paper Scissors</title>
 
-    <style>
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .button-container {  
-            display: flex; /* Enables flexbox */  
-            justify-content: center; /* Centers the buttons horizontally */  
-            align-items: center; /* Aligns buttons vertically (if needed) */  
-            margin-bottom: 20px; /* Adds space between icons and buttons */  
+    <style>  
+        body {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            flex-direction: column; /* Add this to arrange items vertically */  
         }  
-
+        .button-container {  
+            display: flex;   
+            justify-content: center;  
+            align-items: center;  
+            margin-bottom: 20px;  
+        }  
         .rps-icons {  
             display: flex;  
             justify-content: center;  
@@ -26,15 +26,17 @@
             width: 100px;  
             border-radius: 50%;  
             background-color: transparent;  
-            margin-right: 10px; /* Adds spacing between icons */  
-            border: 1px solid #ccc; /* Optional: to visualize the circle */  
+            margin-right: 10px;  
+            border: 1px solid #ccc;  
         }  
-
         .rps-image {  
-            height: 80px; /* Adjusted height */  
-            width: 80px; /* Adjusted width */  
+            height: 80px;  
+            width: 80px;  
             border-radius: 50%;  
-        }   
+        }  
+        #user-choose {  
+            margin-bottom: 10px; /* Adds space below */  
+        }  
     </style>
 </head>     
 <body>
@@ -42,7 +44,9 @@
         <button onclick="rpsFunction('rock')" class="rps-icons"><img src="images/rock-emoji.png" class="rps-image"></button>  
         <button onclick="rpsFunction('paper')" class="rps-icons"><img src="images/paper-emoji.png" class="rps-image"></button>  
         <button onclick="rpsFunction('scissors')" class="rps-icons"><img src="images/scissors-emoji.png" class="rps-image"></button>  
-    </div> 
+    </div>
+
+    <div id="user-choose"></div>
     
     <div id="result"></div>
 
@@ -83,6 +87,8 @@
             if(userChoice === 'scissors'){
                 game.scissors = game.scissors + 1;
             }
+
+            document.getElementById('user-choose').textContent = `you choose: ${userChoice}. Computer choose: ${ComputerChoice}`;
 
             const result = determineResult(userChoice, ComputerChoice);
             //document.getElementById("result").innerHTML = `You Chose: ${userChoice}. computer chose: ${ComputerChoice}. result: ${result}`;
