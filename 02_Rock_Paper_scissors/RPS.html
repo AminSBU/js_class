@@ -91,7 +91,10 @@
 
             // Get image elements  
             const userImage = document.getElementById('user-image');  
-            const computerImage = document.getElementById('computer-image');  
+            const computerImage = document.getElementById('computer-image'); 
+            
+            console.log(userImage);
+            console.log(computerImage);
 
             // Set the image source based on the user's choice  
             userImage.src = `images/${userChoice}-emoji.png`;  
@@ -99,10 +102,11 @@
 
             // Set the image source based on the computer's choice  
             computerImage.src = `images/${ComputerChoice}-emoji.png`; // Consistent casing here  
-            computerImage.style.display = 'inline'; // Show the computer's image  
-
+            computerImage.style.display = 'inline'; // Show the computer's image 
+            console.log(userImage.src); 
+            console.log(computerImage.src);
             // Clear any previous text content  
-            document.getElementById('user-choose').textContent = ''; // Clear text content  
+            document.getElementById('user-choose').innerHTML = `<img src="images/${userChoice}-emoji.png">`;     // Clear text content  
 
             const result = determineResult(userChoice, ComputerChoice);  
             // Display result  
