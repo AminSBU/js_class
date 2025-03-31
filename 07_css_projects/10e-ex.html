@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .gaming-button{
+                background-color: green;
+                color: white;
+            }
+
+            .gaming-is-on{
+                background-color: green;
+                color: white;
+            }
+
+            .gaming-is-off{
+                background-color: red;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="gaming-button" class="gaming-button" onclick="buttonClickFunction()">Gaming</button>
+        <button id="music-button" class="music-button" onclick="buttonClickFunction()">Music</button>
+        <button id="tech-button" class="tech-button" onclick="buttonClickFunction()">Tech</button>
+    </body>
+
+    <script>
+        function buttonClickFunction(){
+            const gamingbutton = document.getElementById('gaming-button');
+            const musicbutton = document.getElementById('music-button');
+            const techbutton = document.getElementById('tech-button');
+
+            if(gamingbutton.classList.contains('gaming-is-on')){
+                gamingbutton.classList.remove('gaming-is-on');
+                gamingbutton.classList.add('gaming-is-off');
+                gamingbutton.textContent = 'Gaming';
+            }
+            else{
+                gamingbutton.classList.add('gaming-is-on');
+                gamingbutton.classList.remove('gaming-is-off');
+                gamingbutton.textContent = 'Gaming';
+            }
+        }
+    </script>
+</html>
