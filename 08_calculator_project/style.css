@@ -1,7 +1,13 @@
+.inputText{
+    height: 30px;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
 .oneButton, .twoButton, .threeButton,
 .fourButton, .fiveButton, .sixButton,
 .sevenButton, .eightButton, .nineButton,
-.zeroButton{
+.zeroButton, .pointButton, .equalButton{
     background-color: rgb(61, 60, 60);
     color: white;
     border-radius: 50%;
@@ -12,7 +18,7 @@
     font-size: large;
 }
 
-.plusButton, .minusButton, .crossButton{
+.plusButton, .minusButton, .crossButton, .divideButton{
     background-color: rgb(189, 177, 9);
     color: white;
     border-radius: 50%;
