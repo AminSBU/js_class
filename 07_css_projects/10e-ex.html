@@ -28,16 +28,13 @@
 <script>  
     function buttonClickFunction(buttonId) {  
         const button = document.getElementById(buttonId);  
-        console.log(buttonId);
+        
         // Toggle the button state  
         if (button.classList.contains(`${buttonId}-is-on`)) {
-            console.log(`${buttonId}-is-on`);
             button.classList.remove(`${buttonId}-is-on`);  
             button.classList.add(`${buttonId}-is-off`);  
             button.textContent = buttonId === 'gaming-button' ? 'Gaming' : 'Music'; // Update button text accordingly  
-        } else {  
-            console.log("button.classList.add");
-            console.log(`${buttonId}-is-on`);
+        } else {
             button.classList.add(`${buttonId}-is-on`);  
             button.classList.remove(`${buttonId}-is-off`);  
             button.textContent = buttonId === 'gaming-button' ? 'Gaming' : 'Music'; // Update button text accordingly  
