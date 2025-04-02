@@ -2,17 +2,17 @@
 <html>  
 <head>  
     <style>  
-        .gaming-button, .music-button {  
+        .gaming-button, .music-button, .tech-button {  
             background-color: green;  
             color: white;  
         }  
 
-        .gaming-button-is-on, .music-button-is-on {  
+        .gaming-button-is-on, .music-button-is-on, .tech-button-is-on {  
             background-color: green;  
             color: white;  
         }  
 
-        .gaming-button-is-off, .music-button-is-off {  
+        .gaming-button-is-off, .music-button-is-off, .tech-button-is-off {  
             background-color: red;  
             color: white;  
         }  
@@ -23,21 +23,25 @@
     <button id="gaming-button" class="gaming-button" onclick="buttonClickFunction('gaming-button')">Gaming</button>  
     <button id="music-button" class="music-button" onclick="buttonClickFunction('music-button')">Music</button>  
     <button id="tech-button" class="tech-button" onclick="buttonClickFunction('tech-button')">Tech</button>  
-</body>
+</body>  
 
 <script>  
     function buttonClickFunction(buttonId) {  
         const button = document.getElementById(buttonId);  
-        
-        // Toggle the button state  
-        if (button.classList.contains(`${buttonId}-is-on`)) {
-            button.classList.remove(`${buttonId}-is-on`);  
-            button.classList.add(`${buttonId}-is-off`);  
-            button.textContent = buttonId === 'gaming-button' ? 'Gaming' : 'Music'; // Update button text accordingly  
-        } else {
-            button.classList.add(`${buttonId}-is-on`);  
-            button.classList.remove(`${buttonId}-is-off`);  
-            button.textContent = buttonId === 'gaming-button' ? 'Gaming' : 'Music'; // Update button text accordingly  
+        const isOn = button.classList.toggle(`${buttonId}-is-on`);  
+        button.classList.toggle(`${buttonId}-is-off`, !isOn); // Ternary to manage states  
+
+        // Update button text based on its ID  
+        switch (buttonId) {  
+            case 'gaming-button':  
+                button.textContent = isOn ? 'Gaming' : 'Gaming';  
+                break;  
+            case 'music-button':  
+                button.textContent = isOn ? 'Music' : 'Music';  
+                break;  
+            case 'tech-button':  
+                button.textContent = isOn ? 'Tech' : 'Tech';  
+                break;  
         }  
     }  
 </script>  
