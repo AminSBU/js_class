@@ -1,0 +1,47 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <style>
+        .gaming-button-is-on, .music-button-is-on, .tech-button-is-on {  
+            background-color: green;  
+            color: white;  
+        }  
+
+        .gaming-button-is-off, .music-button-is-off, .tech-button-is-off {  
+            background-color: grey;  
+            color: white;  
+        }  
+    </style>  
+</head>  
+
+<body>  
+    <button id="gaming-button" class="gaming-button-is-off" onclick="buttonClickFunction('gaming-button')">Gaming</button>  
+    <button id="music-button" class="music-button-is-off" onclick="buttonClickFunction('music-button')">Music</button>  
+    <button id="tech-button" class="tech-button-is-off" onclick="buttonClickFunction('tech-button')">Tech</button>  
+</body>  
+
+<script>  
+    function buttonClickFunction(buttonId) {  
+        const button = document.getElementById(buttonId);  
+        const isOn = button.classList.toggle(`${buttonId}-is-on`);  
+        button.classList.toggle(`${buttonId}-is-off`, !isOn); // Ternary to manage states  
+
+        // Update button text based on its ID  
+        if(buttonId === 'gaming-button'){
+            button.classList.remove('music-button-is-off');
+            button.classList.remove('tech-button-is-off');
+        }
+        switch (buttonId) {  
+            case 'gaming-button':  
+                button.textContent = isOn ? 'Gaming' : 'Gaming';  
+                break;  
+            case 'music-button':  
+                button.textContent = isOn ? 'Music' : 'Music';  
+                break;  
+            case 'tech-button':  
+                button.textContent = isOn ? 'Tech' : 'Tech';  
+                break;  
+        }  
+    }  
+</script>  
+</html>  
