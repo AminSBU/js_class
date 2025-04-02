@@ -1,72 +1,47 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            .gaming-button{
-                background-color: green;
-                color: white;
-            }
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <style>  
+        .gaming-button, .music-button {  
+            background-color: green;  
+            color: white;  
+        }  
 
-            .gaming-is-on{
-                background-color: green;
-                color: white;
-            }
+        .gaming-button-is-on, .music-button-is-on {  
+            background-color: green;  
+            color: white;  
+        }  
 
-            .gaming-is-off{
-                background-color: red;
-                color: white;
-            }
+        .gaming-button-is-off, .music-button-is-off {  
+            background-color: red;  
+            color: white;  
+        }  
+    </style>  
+</head>  
 
-            .music-button{
-                background-color: green;
-                color: white;
-            }
+<body>  
+    <button id="gaming-button" class="gaming-button" onclick="buttonClickFunction('gaming-button')">Gaming</button>  
+    <button id="music-button" class="music-button" onclick="buttonClickFunction('music-button')">Music</button>  
+    <button id="tech-button" class="tech-button" onclick="buttonClickFunction('tech-button')">Tech</button>  
+</body>
 
-            .music-is-on{
-                background-color: green;
-                color: white;
-            }
-
-            .music-is-off{
-                background-color: red;
-                color: white;
-            }
-        </style>
-    </head>
-
-    <body>
-        <button id="gaming-button" class="gaming-button" onclick="buttonClickFunction()">Gaming</button>
-        <button id="music-button" class="music-button" onclick="buttonClickFunction()">Music</button>
-        <button id="tech-button" class="tech-button" onclick="buttonClickFunction()">Tech</button>
-    </body>
-
-    <script>
-        function buttonClickFunction(){
-            const gamingbutton = document.getElementById('gaming-button');
-            const musicbutton = document.getElementById('music-button');
-            const techbutton = document.getElementById('tech-button');
-
-            if(gamingbutton.classList.contains('gaming-is-on')){
-                gamingbutton.classList.remove('gaming-is-on');
-                gamingbutton.classList.add('gaming-is-off');
-                gamingbutton.textContent = 'Gaming';
-            }
-            else{
-                gamingbutton.classList.add('gaming-is-on');
-                gamingbutton.classList.remove('gaming-is-off');
-                gamingbutton.textContent = 'Gaming';
-            }
-
-            if(musicbutton.classList.contains('music-is-on')){
-                musicbutton.classList.remove('music-is-on');
-                musicbutton.classList.add('music-is-off');
-                musicbutton.textContent = 'Music';
-            }
-            else{
-                musicbutton.classList.add('music-is-on');
-                musicbutton.classList.remove('music-is-off');
-                musicbutton.textContent = 'Music';
-            }
-        }
-    </script>
-</html>
+<script>  
+    function buttonClickFunction(buttonId) {  
+        const button = document.getElementById(buttonId);  
+        console.log(buttonId);
+        // Toggle the button state  
+        if (button.classList.contains(`${buttonId}-is-on`)) {
+            console.log(`${buttonId}-is-on`);
+            button.classList.remove(`${buttonId}-is-on`);  
+            button.classList.add(`${buttonId}-is-off`);  
+            button.textContent = buttonId === 'gaming-button' ? 'Gaming' : 'Music'; // Update button text accordingly  
+        } else {  
+            console.log("button.classList.add");
+            console.log(`${buttonId}-is-on`);
+            button.classList.add(`${buttonId}-is-on`);  
+            button.classList.remove(`${buttonId}-is-off`);  
+            button.textContent = buttonId === 'gaming-button' ? 'Gaming' : 'Music'; // Update button text accordingly  
+        }  
+    }  
+</script>  
+</html>  
