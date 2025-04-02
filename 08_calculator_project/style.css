@@ -1,5 +1,19 @@
-.oneButton, .twoButton, .threeButton{
+.oneButton, .twoButton, .threeButton,
+.fourButton, .fiveButton, .sixButton,
+.sevenButton, .eightButton, .nineButton,
+.zeroButton{
     background-color: rgb(61, 60, 60);
+    color: white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: large;
+}
+
+.plusButton, .minusButton, .crossButton{
+    background-color: rgb(189, 177, 9);
     color: white;
     border-radius: 50%;
     height: 50px;
