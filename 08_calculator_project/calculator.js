@@ -20,3 +20,25 @@ function calClear(){
 
     display.value = "";
 }
+
+// Add keyboard support  
+document.addEventListener('keydown', function(event) {  
+    const display = document.getElementById('inputText');  
+
+    // Check for number keys and basic operators  
+    if (event.key >= 0 && event.key <= 9) {  
+        calButtonFunction(event.key);  
+    } else if (event.key === '+') {  
+        calButtonFunction('+');  
+    } else if (event.key === '-') {  
+        calButtonFunction('-');  
+    } else if (event.key === '*') {  
+        calButtonFunction('*');  
+    } else if (event.key === '/') {  
+        calButtonFunction('/');  
+    } else if (event.key === 'Enter' || event.key === '=') {  
+        calResult();  
+    } else if (event.key === 'Escape' || event.key === 'c') {  
+        calClear();  
+    }  
+});  
