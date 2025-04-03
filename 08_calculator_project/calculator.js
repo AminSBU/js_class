@@ -3,3 +3,14 @@ function calButtonFunction(calButton){
 
     display.value += calButton;
 }
+
+function calResult(){
+    const display = document.getElementById('inputText');
+
+    try{
+        display.value = eval(display.value);
+    }
+    catch{
+        display.value = "error";
+    }
+}
