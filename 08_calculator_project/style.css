@@ -8,7 +8,7 @@
 .oneButton, .twoButton, .threeButton,
 .fourButton, .fiveButton, .sixButton,
 .sevenButton, .eightButton, .nineButton,
-.zeroButton, .pointButton, .equalButton{
+.zeroButton, .pointButton, .equalButton, .clearButton{
     background-color: rgb(61, 60, 60);
     color: white;
     border-radius: 50%;

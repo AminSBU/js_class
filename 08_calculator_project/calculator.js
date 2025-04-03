@@ -10,7 +10,13 @@ function calResult(){
     try{
         display.value = eval(display.value);
     }
-    catch{
+    catch(error){
         display.value = "error";
     }
+}
+
+function calClear(){
+    const display = document.getElementById('inputText');
+
+    display.value = "";
 }
