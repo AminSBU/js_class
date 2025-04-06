@@ -7,4 +7,6 @@ function addtodoNotReal()
     todoList.push(list);
 
     console.log(todoList);
+
+    input.value = '';
 }
