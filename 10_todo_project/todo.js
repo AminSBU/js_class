@@ -21,4 +21,5 @@ for(let index = 0; index < 3; index++){
     console.log(taskk);
     const html = `<p>${taskk}</p>`;
     console.log(html);
+    taskDiv.innerHTML += html;
 }
