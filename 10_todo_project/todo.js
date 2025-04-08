@@ -11,15 +11,20 @@ function addtodoNotReal()
     input.value = '';
 }
 
+function addTasks(){
+    const inputTask = document.querySelector('.liveInput');
+    const listTask  = inputTask.value;
+
+    console.log(listTask);
+    const htmlCode = `<p>${listTask}</p>`;
+    inputTask.innerHTML += htmlCode;
+}
+
 const task = ['make breakfast', 'eat lunch', 'drink dinner'];
-console.log(task);
 const taskDiv = document.querySelector('.showTask');
-console.log(taskDiv);
 
 for(let index = 0; index < 3; index++){
     const taskk = task[index];
-    console.log(taskk);
     const html = `<p>${taskk}</p>`;
-    console.log(html);
     taskDiv.innerHTML += html;
 }
