@@ -13,13 +13,14 @@ function addtodoNotReal()
 
 function addTasks(){
     const inputTask = document.querySelector('.liveInput');
+    const showTask  = document.querySelector('.showTask');
     console.log(inputTask);
     const listTask  = inputTask.value;
     console.log(listTask);
 
     const htmlCode = `<p>${listTask}</p>`;
     console.log(htmlCode);
-    inputTask.innerHTML += htmlCode;
+    showTask.innerHTML += htmlCode;
 }
 
 const task = ['make breakfast', 'eat lunch', 'drink dinner'];
