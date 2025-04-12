@@ -14,12 +14,10 @@ function addtodoNotReal()
 function addTasks(){
     const inputTask = document.querySelector('.liveInput');
     const showTask  = document.querySelector('.showTask');
-    console.log(inputTask);
+    
     const listTask  = inputTask.value;
-    console.log(listTask);
 
     const htmlCode = `<p>${listTask}</p>`;
-    console.log(htmlCode);
     showTask.innerHTML += htmlCode;
 }
 
