@@ -21,6 +21,17 @@ function addTasks(){
     showTask.innerHTML += htmlCode;
 }
 
+
+function todoTasks(){
+    const inputTask = document.querySelector('.todoInput');
+    const showTask  = document.querySelector('.todoTasks');
+    
+    const listTask  = inputTask.value;
+
+    const htmlCode = `<p>${listTask}</p>`;
+    showTask.innerHTML += htmlCode;
+}
+
 const task = ['make breakfast', 'eat lunch', 'drink dinner'];
 const taskDiv = document.querySelector('.showTask');
 
