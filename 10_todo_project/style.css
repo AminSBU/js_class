@@ -13,3 +13,32 @@
 .liveInput, .addTaskButton {  
     margin-top: 1em; /* Adjusted margin for more reasonable spacing */  
 }
+
+.todoInput{
+    padding: 10px;           /* Add some padding for aesthetics */  
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+
+.todoDate{
+    padding: 10px;           /* Add some padding for aesthetics */  
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: aqua;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+.todoTaskButton{
+    padding: 10px 15px;           /* Add some padding for aesthetics */  
+    background-color: green;
+    color: white;
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
