@@ -1,3 +1,15 @@
+.task-item {  
+    margin-bottom: 10px; /* Add space between each task item */  
+}  
+
+.task-item input {  
+    display: inline-block; /* Make the input and button inline */  
+}  
+
+.task-item button {  
+    display: inline-block; /* Make the input and button inline */  
+}
+
 .liveInput, .addTaskButton {  
     margin-top: 1em; /* Adjusted margin for more reasonable spacing */  
 }
