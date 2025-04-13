@@ -5,14 +5,30 @@
     </head>
 
     <body>
-        <h3>Todo List Practice 1</h3>
-        <input type="text" class="hideInput" id="hideInput" placeholder="type your task">
-        <button class="addTaskOnceButton" id="addTaskOnceButton" onclick="addtodoNotReal()">Add</button>
-        
-        <input type="text" class="liveInput" id="liveInput" placeholder="type your task">
-        <button class="addTaskButton" id="addingTaskButton" onclick="addTasks()">Add</button>
+        <div class="task-container">
+            <div class="task-items">
+                <div class="hidden-task-items">
+                    <h3>Todo List Practice 1</h3>
+                    <input type="text" class="hideInput" id="hideInput" placeholder="type your task">
+                    <button class="addTaskOnceButton" id="addTaskOnceButton" onclick="addtodoNotReal()">Add</button>
+                </div>
 
-        <div class="showTask" id="showTask"></div>
+                <div class="live-task-items">
+                    <h3>Todo List Practice 2</h3>
+                    <input type="text" class="liveInput" id="liveInput" placeholder="type your task">
+                    <button class="addTaskButton" id="addingTaskButton" onclick="addTasks()">Add</button>
+                </div>
+
+                <div class="showTask" id="showTask"></div>
+
+                <div class="new-task-items">
+                    <h3>Todo List</h3>
+                    <input type="text" class="todoInput" id="todoInput" placeholder="Todo Name ...">
+                    <input type="date" class="todoDate" id="todoDate" placeholder="Todo Name ...">
+                    <button class="todoTaskButton" id="todoTaskButton" onclick="todoTasks()">Add</button>
+                </div>
+            </div>
+        </div>
     </body>
 
     <script src="todo.js" defer></script>
