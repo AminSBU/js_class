@@ -42,3 +42,12 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+.deleteTaskButton{
+    background-color: red;
+    color: white;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
