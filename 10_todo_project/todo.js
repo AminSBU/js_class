@@ -28,7 +28,7 @@ function todoTasks(){
     
     const listTask  = inputTask.value;
 
-    const htmlCode = `<p>${listTask}</p>`;
+    const htmlCode = `<p>${listTask}</p><button>Delete</button>`;
     showTask.innerHTML += htmlCode;
 }
 
