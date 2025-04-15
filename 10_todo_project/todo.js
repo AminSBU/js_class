@@ -24,11 +24,13 @@ function addTasks(){
 
 function todoTasks(){
     const inputTask = document.querySelector('.todoInput');
+    const inputDate = document.querySelector('.todoDate');
     const showTask  = document.querySelector('.todoTasks');
     
     const listTask  = inputTask.value;
+    const dateTask  = inputDate.value;
 
-    const htmlCode = `<p>${listTask}</p><button class="deleteTaskButton">Delete</button>`;
+    const htmlCode = `<p>${listTask}${dateTask ? `, ${dateTask}` : ''}</p><button class="deleteTaskButton">Delete</button>`;
     showTask.innerHTML += htmlCode;
 }
 

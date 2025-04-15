@@ -43,11 +43,17 @@
     cursor: pointer;
 }
 
-.deleteTaskButton{
-    background-color: red;
-    color: white;
-    width: 80px;
-    height: 40px;
-    border-radius: 10px;
-    cursor: pointer;
-}
+.deleteTaskButton {  
+    background-color: #ff4c4c; /* Red background */  
+    color: white;              /* White text */  
+    border: none;              /* No border */  
+    border-radius: 5px;       /* Rounded corners */  
+    padding: 10px 20px;       /* Top/Bottom and Left/Right padding */  
+    font-size: 16px;          /* Font size */  
+    cursor: pointer;           /* Pointer cursor on hover */  
+    transition: background-color 0.3s; /* Smooth transition for background color */  
+}  
+
+.deleteTaskButton:hover {  
+    background-color: #d73a3a; /* Darker red on hover */  
+} 
